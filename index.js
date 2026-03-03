@@ -2,6 +2,8 @@ import { menuArray } from './data.js';
 const mainContent = document.getElementById('main-content');
 const orderSection = document.getElementById('order-section');
 const totalPriceElement = document.getElementById('total-price');
+const orderItemContainer = document.getElementById('order-item-container');
+const afterPaymentP = document.getElementById('after-payment-p');
 const modal = document.getElementById('modal');
 const payForm = document.getElementById('pay-form');
 
@@ -26,14 +28,16 @@ payForm.addEventListener('submit', (e) => {
 
     modal.style.display = 'none';
     orderSection.style.display = 'none';
-    document.getElementById('thanks-for-paying').innerText =
-        `Thanks, ${customerName}! Your order is on its way!`;
-    document.getElementById('thanks-for-paying').style.display = 'block';
+    orderItemContainer.innerHTML = '';
+    totalPrice = 0;
+
+    afterPaymentP.innerText = `Thanks, ${customerName}! Your order is on its way!`;
+    afterPaymentP.style.display = 'block';
 });
 
 function handleOrderItemClick(itemName, itemPrice) {
     totalPrice += Number(itemPrice);
-    document.getElementById('order-item-container').innerHTML += `
+    orderItemContainer.innerHTML += `
                 <div class="order-item">
                     <p>${itemName}</p>
                     <p>${itemPrice}$</p>
@@ -41,6 +45,7 @@ function handleOrderItemClick(itemName, itemPrice) {
     `;
 
     totalPriceElement.innerText = `${totalPrice}$`;
+    afterPaymentP.style.display = 'none';
 }
 
 function handleCompleteOrderClick() {

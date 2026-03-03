@@ -9,7 +9,7 @@ body {
 
 #main-content,
 #order-section,
-#final,
+#after-payment-section,
 header {
     width: 400px;
 }
@@ -100,12 +100,12 @@ h2 {
     box-shadow: 0px 0px 100px 5px #666;
 }
 
-#thanks-for-paying {
+#after-payment-p {
     display: none;
     background-color: #ecfdf5;
     color: #065f46;
     padding: 30px 60px;
 }
-#final {
+#after-payment-section {
     text-align: center;
 }
