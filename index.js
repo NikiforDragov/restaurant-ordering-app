@@ -3,6 +3,7 @@ const mainContent = document.getElementById('main-content');
 
 document.addEventListener('click', (e) => {
     if (e.target.dataset.id) {
+        document.getElementById('order-section').style.display = 'block';
     }
 });
 

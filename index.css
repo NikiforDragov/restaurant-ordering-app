@@ -10,7 +10,7 @@ body {
 #main-content,
 #order-section,
 header {
-    width: 500px;
+    width: 400px;
 }
 
 header {
@@ -25,6 +25,10 @@ header p {
 
 h1 {
     margin: 0;
+}
+
+h2 {
+    text-align: center;
 }
 
 .item-container {
@@ -52,4 +56,29 @@ h1 {
     width: 50px;
     height: 50px;
     font-size: 30px;
+}
+
+/* order section */
+#order-section {
+    display: none;
+}
+
+.order-item,
+.total-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-price {
+    border-top: 2px solid #393333;
+}
+
+.complete-order-btn {
+    background-color: #16db99;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+    display: block;
+    padding: 15px 0;
 }
