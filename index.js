@@ -3,9 +3,21 @@ const mainContent = document.getElementById('main-content');
 
 document.addEventListener('click', (e) => {
     if (e.target.dataset.id) {
+        const itemName = e.target.dataset.name;
+        const itemPrice = e.target.dataset.price;
+        handleOrderItemClick(itemName, itemPrice);
         document.getElementById('order-section').style.display = 'block';
     }
 });
+
+function handleOrderItemClick(itemName, itemPrice) {
+    document.getElementById('order-item-container').innerHTML += `
+                <div class="order-item">
+                    <p>${itemName}</p>
+                    <p>${itemPrice}$</p>
+                </div>
+    `;
+}
 
 function renderMenu() {
     menuArray.forEach((menuItem) => {
@@ -24,7 +36,7 @@ function renderMenu() {
                         <p class="item-price">${price}</p>
                     </div>
                 </div>
-                <button class="add-to-cart-btn" data-id=${id}>+</button>
+                <button class="add-to-cart-btn" data-id=${id} data-name=${name} data-price=${price}>+</button>
             </div>
         `;
     });
