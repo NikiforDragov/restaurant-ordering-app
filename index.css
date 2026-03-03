@@ -3,10 +3,13 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
 
-#main-content {
+#main-content,
+#order-section,
+header {
     width: 500px;
 }
 
