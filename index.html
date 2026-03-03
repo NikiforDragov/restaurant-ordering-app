@@ -20,10 +20,29 @@
             <div id="order-item-container"></div>
             <div class="total-price">
                 <p>Total price:</p>
-                <p>26$</p>
+                <p id="total-price"></p>
             </div>
-            <button class="complete-order-btn">Complete order</button>
+            <button id="complete-order-btn">Complete order</button>
         </section>
+        <section id="final">
+            <p id="thanks-for-paying">
+                Thanks, James! Your order is on its way!
+            </p>
+        </section>
+        <div id="modal">
+            <p>Enter card details</p>
+            <form id="pay-form">
+                <input
+                    name="customer-name"
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                />
+                <input type="text" placeholder="Enter card number" required />
+                <input type="text" placeholder="Enter CVV" required />
+                <button type="submit">Pay</button>
+            </form>
+        </div>
         <script src="index.js" type="module"></script>
     </body>
 </html>

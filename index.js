@@ -1,5 +1,11 @@
 import { menuArray } from './data.js';
 const mainContent = document.getElementById('main-content');
+const orderSection = document.getElementById('order-section');
+const totalPriceElement = document.getElementById('total-price');
+const modal = document.getElementById('modal');
+const payForm = document.getElementById('pay-form');
+
+let totalPrice = 0;
 
 document.addEventListener('click', (e) => {
     if (e.target.dataset.id) {
@@ -7,16 +13,38 @@ document.addEventListener('click', (e) => {
         const itemPrice = e.target.dataset.price;
         handleOrderItemClick(itemName, itemPrice);
         document.getElementById('order-section').style.display = 'block';
+    } else if (e.target.id === 'complete-order-btn') {
+        handleCompleteOrderClick();
     }
 });
 
+payForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const data = new FormData(payForm);
+    const customerName = data.get('customer-name');
+
+    modal.style.display = 'none';
+    orderSection.style.display = 'none';
+    document.getElementById('thanks-for-paying').innerText =
+        `Thanks, ${customerName}! Your order is on its way!`;
+    document.getElementById('thanks-for-paying').style.display = 'block';
+});
+
 function handleOrderItemClick(itemName, itemPrice) {
+    totalPrice += Number(itemPrice);
     document.getElementById('order-item-container').innerHTML += `
                 <div class="order-item">
                     <p>${itemName}</p>
                     <p>${itemPrice}$</p>
                 </div>
     `;
+
+    totalPriceElement.innerText = `${totalPrice}$`;
+}
+
+function handleCompleteOrderClick() {
+    modal.style.display = 'block';
 }
 
 function renderMenu() {

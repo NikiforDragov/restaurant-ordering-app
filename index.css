@@ -9,6 +9,7 @@ body {
 
 #main-content,
 #order-section,
+#final,
 header {
     width: 400px;
 }
@@ -73,7 +74,7 @@ h2 {
     border-top: 2px solid #393333;
 }
 
-.complete-order-btn {
+#complete-order-btn {
     background-color: #16db99;
     color: white;
     border: none;
@@ -81,4 +82,30 @@ h2 {
     width: 100%;
     display: block;
     padding: 15px 0;
+}
+
+/* modal */
+#modal {
+    display: none;
+    width: 350px;
+    height: 350px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 2px;
+    box-shadow: 0px 0px 100px 5px #666;
+}
+
+#thanks-for-paying {
+    display: none;
+    background-color: #ecfdf5;
+    color: #065f46;
+    padding: 30px 60px;
+}
+#final {
+    text-align: center;
 }
