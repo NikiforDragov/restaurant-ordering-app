@@ -17,6 +17,8 @@ document.addEventListener('click', (e) => {
         document.getElementById('order-section').style.display = 'block';
     } else if (e.target.id === 'complete-order-btn') {
         handleCompleteOrderClick();
+    } else if (e.target.id === 'remove-item-btn') {
+        handleRemoveClick(e);
     }
 });
 
@@ -38,8 +40,8 @@ payForm.addEventListener('submit', (e) => {
 function handleOrderItemClick(itemName, itemPrice) {
     totalPrice += Number(itemPrice);
     orderItemContainer.innerHTML += `
-                <div class="order-item">
-                    <p class="bold">${itemName} <button class="remove-item-btn light">remove</button></p>
+                <div class="order-item" data-price=${itemPrice}>
+                    <p class="bold">${itemName} <button id="remove-item-btn" class="remove-item-btn light">remove</button></p>
                     <p class="bold">${itemPrice}$</p>
                 </div>
     `;
@@ -50,6 +52,14 @@ function handleOrderItemClick(itemName, itemPrice) {
 
 function handleCompleteOrderClick() {
     modal.style.display = 'block';
+}
+
+function handleRemoveClick(e) {
+    const itemElement = e.target.parentElement.parentElement;
+    const itemPrice = Number(itemElement.dataset.price);
+    itemElement.remove();
+    totalPrice -= itemPrice;
+    totalPriceElement.innerText = `${totalPrice}$`;
 }
 
 function renderMenu() {
