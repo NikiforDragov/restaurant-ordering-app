@@ -44,19 +44,32 @@ h2 {
     margin: 0;
 }
 
+.item-name {
+    margin-bottom: 0;
+}
+
+.item-ingredients {
+    margin: 5px 0;
+}
+
 .item-info {
     display: flex;
     gap: 20px;
 }
 
 .add-to-cart-btn {
+    font-family: Inter;
     align-self: center;
     background-color: #ffffff;
     border: 1px solid #dedede;
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    font-size: 30px;
+    font-size: 25px;
+}
+
+.add-to-cart-btn:hover {
+    border: 1px solid black;
 }
 
 /* order section */
@@ -108,4 +121,12 @@ h2 {
 }
 #after-payment-section {
     text-align: center;
+}
+
+.light {
+    opacity: 0.6;
+}
+
+.bold {
+    font-weight: bold;
 }

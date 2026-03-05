@@ -62,11 +62,11 @@ function renderMenu() {
                         <p class="item-emoji">${emoji}</p>
                     </div>
                     <div class="info">
-                        <p class="item-name">${name}</p>
-                        <p class="item-ingredients">
-                            ${ingredients}
+                        <p class="item-name bold">${name}</p>
+                        <p class="item-ingredients light">
+                            ${ingredients.join(', ')}
                         </p>
-                        <p class="item-price">${price}</p>
+                        <p class="item-price">$${price}</p>
                     </div>
                 </div>
                 <button class="add-to-cart-btn" data-id=${id} data-name=${name} data-price=${price}>+</button>
