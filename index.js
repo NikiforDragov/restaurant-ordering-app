@@ -39,7 +39,7 @@ function handleOrderItemClick(itemName, itemPrice) {
     totalPrice += Number(itemPrice);
     orderItemContainer.innerHTML += `
                 <div class="order-item">
-                    <p class="bold">${itemName}</p>
+                    <p class="bold">${itemName} <button class="remove-item-btn light">remove</button></p>
                     <p class="bold">${itemPrice}$</p>
                 </div>
     `;

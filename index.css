@@ -92,6 +92,15 @@ h2 {
     margin-top: 15px;
 }
 
+.remove-item-btn {
+    border: none;
+    background-color: white;
+}
+.remove-item-btn:hover {
+    cursor: pointer;
+    color: red;
+}
+
 #complete-order-btn {
     background-color: #16db99;
     color: white;
