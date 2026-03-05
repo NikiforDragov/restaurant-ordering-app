@@ -39,8 +39,8 @@ function handleOrderItemClick(itemName, itemPrice) {
     totalPrice += Number(itemPrice);
     orderItemContainer.innerHTML += `
                 <div class="order-item">
-                    <p>${itemName}</p>
-                    <p>${itemPrice}$</p>
+                    <p class="bold">${itemName}</p>
+                    <p class="bold">${itemPrice}$</p>
                 </div>
     `;
 
