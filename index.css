@@ -101,7 +101,8 @@ h2 {
     color: red;
 }
 
-#complete-order-btn {
+#complete-order-btn,
+#pay-btn {
     background-color: #16db99;
     color: white;
     border: none;
@@ -115,6 +116,7 @@ h2 {
 /* modal */
 #modal {
     display: none;
+    font-family: Verdana, sans-serif;
     width: 350px;
     height: 350px;
     background-color: #ffffff;
@@ -126,6 +128,22 @@ h2 {
     margin: auto;
     border-radius: 2px;
     box-shadow: 0px 0px 100px 5px #666;
+    text-align: center;
+}
+
+#pay-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 20px;
+}
+
+#pay-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #757575;
+    border-radius: 2px;
 }
 
 #after-payment-p {
