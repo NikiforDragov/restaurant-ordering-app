@@ -7,11 +7,15 @@ body {
     flex-direction: column;
 }
 
-#main-content,
+#main-content {
+    max-width: 400px;
+    width: 90%;
+}
 #order-section,
 #after-payment-section,
 header {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
 }
 
 header {
